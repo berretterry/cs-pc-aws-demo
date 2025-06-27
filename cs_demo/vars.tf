@@ -45,20 +45,3 @@ variable "create_eks" {
   default     = false
   description = "Set to true to create an EKS cluster"
 }
-
-# variable "eks_cluster_endpoint" {
-#   type        = string
-#   description = "eks cluster endpoint"
-# }
-
-# variable "eks_cluster_ca" {
-#   type        = string
-#   default     = module.eks.eks_cluster_ca
-#   description = "eks cluster certificate"
-# }
-
-# variable "eks_cluster_token" {
-#   type        = string
-#   default     = module.eks.eks_cluster_token
-#   description = "eks cluster token"
-# }

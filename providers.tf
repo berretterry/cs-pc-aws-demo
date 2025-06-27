@@ -18,11 +18,7 @@ terraform {
       version  = "2.37.1"
     }
   }
-  #   backend "s3" {
-  #     bucket = "bterry-lab"
-  #     key = "bterry-lab/terraform.tfstate"
-  #     region = module.cs_demo.aws_region
-  # }
+
 }
 provider "aws" {
   region  = local.aws_region

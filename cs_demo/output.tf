@@ -16,8 +16,3 @@ output "eks_cluster_name" {
   value = module.eks[0].eks_cluster_name
   description = "eks cluster name"
 }
-
-output "deployer_arn" {
-  value = module.eks[0].deployer_arn
-  description = "The ARN of the IAM role you are currently using to deploy this module"
-}

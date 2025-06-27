@@ -23,10 +23,6 @@ variable "subnet_id" {
   description = "Proxy Cluster Worker subnet id"
   type        = string
 }
-# variable "ssh_hostname" {
-#   description = "SSH Web Server hostname"
-#   type        = string
-# }
 
 variable "proxy_cluster_id" {
   description = "sdm proxy cluster id."

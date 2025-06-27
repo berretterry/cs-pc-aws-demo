@@ -1,5 +1,4 @@
 module "eks" {
-  # count           = var.enabled ? 1 : 0
   source          = "terraform-aws-modules/eks/aws"
   version         = ">= 20.8.4"
   cluster_name    = "${var.name}-eks"

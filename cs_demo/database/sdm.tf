@@ -18,7 +18,10 @@ resource "sdm_resource" "mysql_admin" {
 
     proxy_cluster_id = var.proxy_cluster_id
 
-    tags = merge({ Name = "${var.name}-mysql-admin" }, var.tags)
+    tags = merge({
+      Name = "${var.name}-mysql-admin"
+      workflow = "${var.name}-workflow"
+    }, var.tags)
   }
 }
 resource "sdm_resource" "mysql_ro" {
@@ -35,6 +38,7 @@ resource "sdm_resource" "mysql_ro" {
     tags = merge({
       Name               = "${var.name}-mysql-ro",
       ReadOnlyOnboarding = "true"
+      workflow = "${var.name}-workflow"
     }, var.tags)
   }
 }

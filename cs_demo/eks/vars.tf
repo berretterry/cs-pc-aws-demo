@@ -32,8 +32,3 @@ variable "worker_role_arn" {
   type = string
   description = "arn of the proxy worker role"
 }
-
-# variable "enabled" {
-#   description = "modularizing the eks cluster resources"
-#   type = bool
-# }

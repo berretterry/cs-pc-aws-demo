@@ -14,7 +14,10 @@ resource "sdm_resource" "windows_server" {
     port     = 3389
     username = "Administrator"
     password = rsadecrypt(local.password, local.private_key)
-    tags     = merge({ Name = "${var.name}-rdp" }, var.tags)
+    tags     = merge({
+      Name = "${var.name}-rdp"
+      workflow = "${var.name}-workflow"
+    }, var.tags)
 
     proxy_cluster_id = var.proxy_cluster_id
   }

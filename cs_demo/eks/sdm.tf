@@ -24,11 +24,9 @@ resource "sdm_resource" "eks" {
     endpoint = module.eks.cluster_endpoint
     region   = var.aws_region
 
-    # role_arn = var.worker_role_arn
-
-    # When specified strongDM will inherit permissions from this role
     tags = merge({
       Name = "${var.name}-eks"
+      workflow = "${var.name}-workflow"
     }, var.tags)
   }
 }

@@ -8,7 +8,7 @@ module "cs_demo" {
   tags                    = local.tags
 
   # List of email addresses of existing StrongDM users who will receive access to all resources
-  existing_users = local.existing_users
+  existing_users          = local.existing_users
 
   #AWS Region you want resources deployed in
   aws_region              = local.aws_region

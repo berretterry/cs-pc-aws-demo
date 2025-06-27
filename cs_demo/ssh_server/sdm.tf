@@ -16,7 +16,10 @@ resource "sdm_resource" "web_page" {
 
     proxy_cluster_id = var.proxy_cluster_id
 
-    tags = merge({ Name = "${var.name}-http" }, var.tags)
+    tags = merge({
+      Name = "${var.name}-http"
+      workflow = "${var.name}-workflow"
+    }, var.tags)
   }
 }
 
@@ -26,7 +29,10 @@ resource "sdm_resource" "ssh_ec2" {
     username = "ec2-user"
     hostname = aws_instance.web_page.private_ip
     port     = 22
-    tags     = merge({ Name = "${var.name}-ssh" }, var.tags)
+    tags     = merge({
+      Name = "${var.name}-ssh"
+      workflow = "${var.name}-workflow"
+    }, var.tags)
 
     proxy_cluster_id = var.proxy_cluster_id
   }

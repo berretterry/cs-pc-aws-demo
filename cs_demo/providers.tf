@@ -18,11 +18,3 @@ terraform {
     }
   }
 }
-
-provider "kubernetes" {
-  host                   = module.eks[0].eks_cluster_endpoint
-  cluster_ca_certificate = base64decode(module.eks[0].eks_cluster_ca)
-  token                  = module.eks[0].eks_cluster_token
-
-  alias = "eks"
-}
