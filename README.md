@@ -69,7 +69,7 @@ Please open the `config.tf` file and fill out the following items:
    terraform apply
    ```
 
-   > [!TIP]
+   > [!NOTE]
    > The script runs until it is complete. Note any errors. If there are no errors, you should see new resources, such as databases, clusters, or servers, in the StrongDM Admin UI. Additionally, your AWS Management Console displays any new resources added when you ran the module.
 
 6. Remove the resources created with Terraform Destroy:
