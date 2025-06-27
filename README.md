@@ -4,31 +4,17 @@
 
 This is a multi-module project to install Proxy Clusters with a bridged worker into a private AWS network, with one of each resources
 
-At this time the project is only for AWS and you will need your AWS Access Keys:
+## At this time the project is only for AWS and you will need your AWS Access Keys:
 
-`export AWS_ACCESS_KEY_ID=<"ACCESS_KEY">`
-
-`export AWS_SECRET_ACCESS_KEY=<"SECRET_KEY">`
-
-`export AWS_SESSION_TOKEN=<"TOKEN">`
-
-You will also need your StrongDM API Keys to deploy into StrongDM
-
-`export SDM_API_ACCESS_KEY=<"ACCESS_KEY">`
-
-`export SDM_API_SECRET_KEY=<"SECRET_KEY">`
-
----
-
-## Configuration
+## Customize the Deployment
 
 Please open the `config.tf` file and fill out the following items:
 
-- [ ] name: This is the project name and will be a prefix for most resources deployed in AWS and SDM.
-- [ ] tags: These are the tags you want put on all of your resources in AWS and especially SDM
-- [ ] aws_region: This is required for deployment and will be the region that everything is deployed in.
-- [ ] existing_users: This is a list of existing user emails that you would like to have workflow access to these resources.
-- [ ] Resources: Select True or False for whichever resources you would like to deploy.
+- [ ] $\color{ProcessBlue}{**name**}$: This is the project name and will be a prefix for most resources deployed in AWS and SDM.
+- [ ] $\color{ProcessBlue}{**tags**}$: These are the tags you want put on all of your resources in AWS and especially SDM
+- [ ] $\color{ProcessBlue}{**aws_region**}$: This is required for deployment and will be the region that everything is deployed in.
+- [ ] $\color{ProcessBlue}{**existing_users**}$: This is a list of existing user emails that you would like to have workflow access to these resources.
+- [ ] $\color{ProcessBlue}{**Resources**}$: Select True or False for whichever resources you would like to deploy.
 
   **Resources available:**
 
@@ -36,6 +22,59 @@ Please open the `config.tf` file and fill out the following items:
   - RDP Windows server
   - RDS MySQL database
   - EKS Cluster (run the setup yaml to get discovery and privilege levels)
+
+> $\color{ProcessBlue}{**WARNING**}$ These scripts create infrastructure resources in your AWS account, incurring AWS costs. Once you are done testing, remove these resources to prevent unnecessary AWS costs. You can remove resources manually or with `terraform destroy`. StrongDM provides these scripts as is, and does not accept liability for any alterations to AWS assets or any AWS costs incurred.
+
+---
+
+## To Run the Module
+
+1. Clone the repository:
+
+   ```shell
+   git clone https://github.com/strongdm/terraform-sdm-onboarding.git
+   ```
+
+2. Switch to the directory containing the cloned project:
+
+   ```shell
+   cd cs-pc-aws-demo
+   ```
+
+3. Set environment variables for the API key
+
+   ```shell
+   # strongdm access and secret keys
+   export SDM_API_ACCESS_KEY=auth-xxxxxxxxxxxx
+   export SDM_API_SECRET_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+   # For the AWS creds, ideally set your profile.
+   export AWS_PROFILE=<profile-name>
+
+   # Otherwise, set your keys
+   # export AWS_ACCESS_KEY_ID=xxxxxxxxx
+   # export AWS_SECRET_ACCESS_KEY=xxxxxxxxx
+   ```
+
+4. Initialize the working directory containing the Terraform configuration files:
+
+   ```shell
+   terraform init
+   ```
+
+5. Execute the actions proposed in the Terraform plan:
+
+   ```shell
+   terraform apply
+   ```
+
+   > The script runs until it is complete. Note any errors. If there are no errors, you should see new resources, such as databases, clusters, or servers, in the StrongDM Admin UI. Additionally, your AWS Management Console displays any new resources added when you ran the module.
+
+6. Remove the resources created with Terraform Destroy:
+
+   ```shell
+   terraform destroy
+   ```
 
 ---
 
@@ -69,8 +108,12 @@ You can run through the steps on your own of connecting to the cluster, or you c
 
 If the shell script doesn't run you may have to use a chmod command
 
-`chmod +x setup-sdm-rbac.sh`
+```shell
+chmod +x setup-sdm-rbac.sh
+```
 
 Then you can run the script normally and it will update the cluster
 
-`./setup-sdm-rbac.sh`
+```shell
+./setup-sdm-rbac.sh
+```
