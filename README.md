@@ -1,7 +1,5 @@
 # CS-Demo-AWS
 
--
-
 ## Intro
 
 This is a multi-module project to install Proxy Clusters with a bridged worker into a private AWS network, with one of each resources
