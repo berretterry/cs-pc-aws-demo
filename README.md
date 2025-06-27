@@ -4,7 +4,7 @@
 
 This is a multi-module project to install Proxy Clusters with a bridged worker into a private AWS network, with one of each resources
 
-## At this time the project is only for AWS and you will need your AWS Access Keys:
+At this time the project is only for AWS and you will need your AWS Access Keys:
 
 ## Customize the Deployment
 
@@ -69,6 +69,7 @@ Please open the `config.tf` file and fill out the following items:
    terraform apply
    ```
 
+   > [!TIP]
    > The script runs until it is complete. Note any errors. If there are no errors, you should see new resources, such as databases, clusters, or servers, in the StrongDM Admin UI. Additionally, your AWS Management Console displays any new resources added when you ran the module.
 
 6. Remove the resources created with Terraform Destroy:
