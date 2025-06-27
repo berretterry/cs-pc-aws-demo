@@ -10,11 +10,11 @@ This is a multi-module project to install Proxy Clusters with a bridged worker i
 
 Please open the `config.tf` file and fill out the following items:
 
-- [ ] $\color{ProcessBlue}{**name**}$: This is the project name and will be a prefix for most resources deployed in AWS and SDM.
-- [ ] $\color{ProcessBlue}{**tags**}$: These are the tags you want put on all of your resources in AWS and especially SDM
-- [ ] $\color{ProcessBlue}{**aws_region**}$: This is required for deployment and will be the region that everything is deployed in.
-- [ ] $\color{ProcessBlue}{**existing_users**}$: This is a list of existing user emails that you would like to have workflow access to these resources.
-- [ ] $\color{ProcessBlue}{**Resources**}$: Select True or False for whichever resources you would like to deploy.
+- [ ] **name**: This is the project name and will be a prefix for most resources deployed in AWS and SDM.
+- [ ] **tags**: These are the tags you want put on all of your resources in AWS and especially SDM
+- [ ] **aws_region**: This is required for deployment and will be the region that everything is deployed in.
+- [ ] **existing_users**: This is a list of existing user emails that you would like to have workflow access to these resources.
+- [ ] **Resources**: Select True or False for whichever resources you would like to deploy.
 
   **Resources available:**
 
@@ -23,7 +23,8 @@ Please open the `config.tf` file and fill out the following items:
   - RDS MySQL database
   - EKS Cluster (run the setup yaml to get discovery and privilege levels)
 
-> $\color{ProcessBlue}{**WARNING**}$ These scripts create infrastructure resources in your AWS account, incurring AWS costs. Once you are done testing, remove these resources to prevent unnecessary AWS costs. You can remove resources manually or with `terraform destroy`. StrongDM provides these scripts as is, and does not accept liability for any alterations to AWS assets or any AWS costs incurred.
+> [!WARNING]
+> These scripts create infrastructure resources in your AWS account, incurring AWS costs. Once you are done testing, remove these resources to prevent unnecessary AWS costs. You can remove resources manually or with `terraform destroy`. StrongDM provides these scripts as is, and does not accept liability for any alterations to AWS assets or any AWS costs incurred.
 
 ---
 
