@@ -22,7 +22,7 @@ variable "ingress_cidr_blocks" {
 
 variable "existing_users" {
   type        = list(string)
-  default     = []
+  # default     = []
   description = "A list of email addresses for existing accounts to be granted access to all resources."
 }
 variable "create_db" {

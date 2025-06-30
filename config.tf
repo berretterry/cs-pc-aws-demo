@@ -8,13 +8,14 @@ locals {
     }
 
   # List of email addresses of existing StrongDM users who will receive access to all resources
-  existing_users          = ["list of email addresses"]
+  # !!!Must be a valid email address IN the tenant you are trying to add resources to!!!
+  existing_users          = ["example.email@example.com"]
 
   #AWS Region you want resources deployed in
-  aws_region              = "AWS Region to Deploy"
+  aws_region              = "aws-region"
 
   #Change this to true to create an rdp server
-  create_rdp              = true
+  create_rdp              = false
 
   #Change this to true to create an ssh/web server
   create_ssh_web          = true
