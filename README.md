@@ -14,8 +14,10 @@ Please open the `config.tf` file and fill out the following items:
 - [ ] **tags**: These are the tags you want put on all of your resources in AWS and especially SDM
 - [ ] **aws_region**: This is required for deployment and will be the region that everything is deployed in.
 - [ ] **existing_users**: This is a list of existing user emails that you would like to have workflow access to these resources.
-     > [!NOTE]
-     > The email addresses MUST be present in your StrongDM tenant already or the plan/apply will fail. 
+
+> [!WARNING]
+> The email addresses MUST already exist in the StrongDM tenant you are deploying these resources to; otherwise, the plan/apply will fail.
+
 - [ ] **Resources**: Select True or False for whichever resources you would like to deploy.
 
   **Resources available:**
