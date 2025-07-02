@@ -25,7 +25,7 @@ Please open the `config.tf` file and fill out the following items:
   - SSH and simple web server
   - RDP Windows server
   - RDS MySQL database
-  - EKS Cluster (run the setup yaml to get discovery and privilege levels)
+  - EKS Cluster (run the [`setup-sdm-rbac.sh`](#configuring-the-eks-cluster-for-discovery-and-privilege-escalation) shell script to get discovery and privilege levels)
 
 > [!WARNING]
 > These scripts create infrastructure resources in your AWS account, incurring AWS costs. Once you are done testing, remove these resources to prevent unnecessary AWS costs. You can remove resources manually or with `terraform destroy`. StrongDM provides these scripts as is, and does not accept liability for any alterations to AWS assets or any AWS costs incurred.
