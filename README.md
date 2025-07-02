@@ -14,6 +14,8 @@ Please open the `config.tf` file and fill out the following items:
 - [ ] **tags**: These are the tags you want put on all of your resources in AWS and especially SDM
 - [ ] **aws_region**: This is required for deployment and will be the region that everything is deployed in.
 - [ ] **existing_users**: This is a list of existing user emails that you would like to have workflow access to these resources.
+     > [!NOTE]
+     > The email addresses MUST be present in your StrongDM tenant already or the plan/apply will fail. 
 - [ ] **Resources**: Select True or False for whichever resources you would like to deploy.
 
   **Resources available:**
@@ -33,7 +35,7 @@ Please open the `config.tf` file and fill out the following items:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/strongdm/terraform-sdm-onboarding.git
+   git clone https://github.com/berretterry/cs-pc-aws-demo.git
    ```
 
 2. Switch to the directory containing the cloned project:
