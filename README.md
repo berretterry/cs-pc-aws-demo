@@ -15,7 +15,7 @@ Please open the `config.tf` file and fill out the following items:
 - [ ] **aws_region**: This is required for deployment and will be the region that everything is deployed in.
 - [ ] **existing_users**: This is a list of existing user emails that you would like to have workflow access to these resources.
 
-> [!WARNING]
+> [!NOTE]
 > The email addresses MUST already exist in the StrongDM tenant you are deploying these resources to; otherwise, the plan/apply will fail.
 
 - [ ] **Resources**: Select True or False for whichever resources you would like to deploy.
